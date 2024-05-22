@@ -1,0 +1,296 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+body {
+    background-color: rgb(63, 121, 36);
+}
+
+main {
+    display: inline-block;
+    width: 50%;
+    margin-top: 50px;
+}
+
+main#login {
+    position: relative;
+    bottom: 120px;
+}
+
+header {
+    color: white;
+    text-align: center;
+    font-family: "STIX Two Text", Arial, Helvetica, sans-serif;
+
+    height: 55px;
+    width: 100%;
+    margin: 0px 0px 15px 0px;
+}
+
+header > h1{
+    font-size: 3em;
+}
+
+section {
+    height: 100%;
+    width: 100%;
+}
+
+form > input{
+    color: rgb(148, 145, 145);
+    font-size: larger;
+    text-align: center;
+
+    height: 55px;
+    width: 300px;
+    margin: 35px auto 10px auto;
+    border-radius: 35px;
+    padding: 5px 80px;
+    display: block;
+
+    border: 0px;
+    box-shadow: 2px 2px 7px #234414;
+}
+
+form > div > input{
+    color: rgb(148, 145, 145);
+    font-size: larger;
+    text-align: center;
+
+    height: 55px;
+    width: 300px;
+    margin: 35px auto 10px auto;
+    border-radius: 35px;
+    padding: 5px 80px;
+    display: block;
+
+    border: 0px;
+    box-shadow: 1px 1px 4px #234414;
+}
+
+form > input:enabled {
+    color: black;
+}
+
+form > input:focus {
+    border: 3px solid #555;
+}
+
+form > a {
+    max-height: 20px;
+    margin-left: 25%;
+    padding: 2px 5px;
+    color: white;
+    text-decoration: none;
+    font-size: large;
+}
+
+form > a:hover {
+    background-color: #509b2d;
+    border-radius: 10px;
+}
+
+.botao_form {
+    color: black;
+    text-align: center;
+
+    margin: 35px auto;
+    width: 150px;
+    padding: 5px 20px;
+}
+
+.botao_form:hover {
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+img {
+    display: inline-block;
+    width: 49%;
+    height: 680px;
+    margin: 0px;
+    border-radius: 5px;
+}
+
+div.exemplo {
+    margin-top: 50px;
+    display: inline-flex;
+    width: 49%;
+    height: 600px;
+    background-color: lightslategray;
+}
+
+#conteudo {
+    background-color: white;
+}
+
+.menu {
+    height: 709px;
+    width: 17%;
+    background-color: #3F7924;
+    padding-top: 30px;
+    display: inline-block;
+}
+
+.menu > a {
+    text-decoration: none;
+    font-size: 1.28em;
+    font-weight: bold;
+}
+
+.nav_link {
+    padding: 30px 30px;
+    width: 185px;
+    height: 5%;
+    text-align: justify;
+    color: white;
+}
+
+
+.nav_link:hover {
+    cursor: pointer;
+    background-color: #006400;
+}
+
+.form_arvore {
+    display: inline-block;
+    position: relative;
+    bottom: -45px;
+    margin-left: 50px;
+    font-size: 0.92em;
+}
+
+.form_arvore > h1 {
+    margin-left: 28px;
+}
+
+.form_arvore > form > div > label {
+    margin-right: 8px;
+    background-color: #8FBC8F;
+    border-radius: 8px;
+    padding: 2px 7px;
+    box-shadow: 1px 1px 2px #234414;
+}
+
+.arvore_inp {
+    height: 22px;
+    width: 180px;
+    display: inline-block;
+    margin: 18px 24px 0px 0px;
+    border-radius: 8px;
+    text-align: justify;
+    padding: 1px 0px 1px 6px;
+    color: black;
+}
+
+.especie > input {
+    width: 65%;
+}
+
+.selecao > input {
+    padding: 5px;
+    width: 150px;
+}
+
+.arvore_check {
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    margin: 18px 24px 0px 0px;
+    border-radius: 10px;
+    position: relative;
+    top: 6px;
+}
+
+.btn_cadastrar {
+    background-color: #8FBC8F;
+    border-radius: 18px;
+    padding: 10px 15px;
+    font-size: 1.5em;
+}
+
+.btn_cadastrar:hover {
+    cursor: pointer;
+    background-color: rgb(80, 134, 80);
+}
+
+.icon {
+    position: relative;
+    top: 4px;
+    display: inline-block;
+    height: 31px;
+    width: 31px;
+    margin-right: 12px;
+}
+
+.relatorio {
+    display: inline-block;
+    position: relative;
+    bottom: 105px;
+    margin-left: 50px;
+}
+
+.relatorio > h1 {
+    margin-left: 28px;
+}
+
+.pesquisa {
+    display: block;
+    position: relative;
+    top: 80px;
+    left: 200px;
+    background-color: #E4E4E4;
+    width: 710px;
+    border-radius: 5px;
+}
+
+.pesquisa > h1 {
+    padding: 10px 20px;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.form_pesquisa {
+    position: relative;
+    display: block;
+    padding: 50px 50px 50px 120px;
+    background-color: rgb(255, 250, 250);
+}
+
+.form_pesquisa > form > label {
+    width: 15%;
+    margin-right: 10px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.form_pesquisa > form > input {
+    width: 55%;
+    background-color: #E4E4E4;
+    margin-bottom: 18px;
+}
+
+.form_pesquisa > form > .btn_pesquisas {
+    display: inline-block;
+    background-color: #3F7924;
+    width: 130px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#limpar {
+    margin-left: 190px;
+}
+
+.form_pesquisa > form > .btn_pesquisas:hover {
+    cursor: pointer;
+    background-color: #2a6110;
+}

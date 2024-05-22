@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div id="conteudo">
+        <nav class="menu">
+            <a href="home.html"><div class="nav_link"><img src="/static/imagens/homeicon.png" alt="Imagem de uma casa" class="icon">Início</div></a>
+            <a href="arvore_cadastro.html"><div class="nav_link"><img src="/static/imagens/cadastroicon.png" alt="Imagem de uma folha" class="icon">Cadastro</div></a>
+            <a href="relatorio.html"><div class="nav_link"><img src="/static/imagens/relatorioicon.png" alt="Imagem de" class="icon">Relatórios</div></a>
+            <a href="arvore.html"><div class="nav_link"><img src="/static/imagens/arvoresicon.png" alt="Imagem" class="icon">Árvores</div></a>
+            <a href="ocorrencia.html"><div class="nav_link"><img src="/static/imagens/ocorrenciaicon.png" alt="Imagem" class="icon">Ocorrências</div></a>
+            <a href="configuracao.html"><div class="nav_link"><img src="/static/imagens/configicon.png" alt="Imagem" class="icon">Configurações</div></a>
+        </nav>
+        <div class="form_arvore">
+            <h1><img src="/static/imagens/arvore.png" alt="Imagem de uma árvore" class="icon">Cadastro de Árvores</h1>
+            <form action="/cadastro_arvore" method="post">
+                <div class="especie">
+                    <label for="especie">Espécie</label>
+                    <input type="text" class="arvore_inp" name="especie" required>
+                </div>
+                <div>
+                    <label for="latitude" class="bloco">Latitude</label>
+                    <input type="text" class="arvore_inp" name="latitude" required>
+                    <label for="longitude" class="bloco">Longitude</label>
+                    <input type="text" class="arvore_inp" name="longitude" required>
+                    <label for="diametro" class="bloco">Diâmetro da Copa</label>
+                    <input type="text" class="arvore_inp" name="diametro" required>
+                </div>
+                <div>
+                    <label for="altura" class="bloco">Altura Média</label>
+                    <input type="text" class="arvore_inp" name="altura" required>
+                    <label for="largura_calcada" class="bloco">Largura da Calçada</label>
+                    <input type="text" class="arvore_inp" name="largura_calcada" required>
+                    <label for="radicular" class="bloco">Tipo de Sistema Radicular</label>
+                    <input type="text" class="arvore_inp" name="radicular" required>
+                </div>
+                <div>
+                    <label for="largura_via" class="bloco">Largura da Via Pública</label>
+                    <input type="text" class="arvore_inp" name="largura_via" required>
+                    <label for="fluxo_veiculo" class="bloco">Fluxo de Veículos</label>
+                    <input type="text" class="arvore_inp" name="fluxo_veiculo" required>
+                    <label for="passagem_pedestre" class="bloco">Passagem de Pedestre</label>
+                    <input type="text" class="arvore_inp" name="passagem_pedestre" required>
+                </div>
+                <div>
+                    <label for="fluxo_pedestre" class="bloco">Fluxo de Pedestres</label>
+                    <input type="text" class="arvore_inp" name="fluxo_pedestre" required>
+                    <label for="fitossanitaria" class="bloco">Condição Fitossanitária</label>
+                    <input type="text" class="arvore_inp" name="fitossanitaria" required>
+                    <label for="local" class="bloco">Local Afetado</label>
+                    <input type="text" class="arvore_inp" name="local" required>
+                </div>
+                <div class="selecao">
+                    <label for="rede" class="bloco">Rede Elétrica</label>
+                    <input list="opcao" class="arvore_inp" name="rede" placeholder="Selecione">
+                    <datalist id="opcao">
+                        <option value="Primaria">Primária</option>
+                        <option value="Secundaria">Secundária</option>
+                        <option value="Telefonica">Telefônica</option>
+                    </datalist>
+                    <label for="elementos">Elementos Próximos</label>
+                    <input list="opcao2" class="arvore_inp" name="elementos" placeholder="Selecione">
+                    <datalist id="opcao2">
+                        <option value="Boca de Lobo">Boca de Lobo</option>
+                        <option value="Poste de Energia">Poste de Energia</option>
+                        <option value="Telefonica">Telefônica</option>
+                    </datalist>
+                    <label for="pavimento">Pavimento</label>
+                    <input list="opcao3" class="arvore_inp" name="pavimento" placeholder="Selecione">
+                    <datalist id="opcao3">
+                        <option value="Cimento">Cimento</option>
+                        <option value="Bloquete">Bloquete</option>
+                        <option value="Ceramico">Cerâmico</option>
+                    </datalist>
+                </div>
+                <div>
+                    <label for="afloramento">Afloramento</label>
+                    <input type="checkbox" name="afloramento" class="arvore_check">
+                    <label for="danos">Danos no Passeio</label>
+                    <input type="checkbox" name="danos" class="arvore_check">
+                    <label for="projecao_raizes">Projeção das Raízes</label>
+                    <input type="checkbox" name="projecao_raizes" class="arvore_check">
+                    <label for="cavidade">Cavidade</label>
+                    <input type="checkbox" name="cavidade" class="arvore_check">
+                    <label for="termitas">Termitas</label>
+                    <input type="checkbox" name="termitas" class="arvore_check">
+                </div>
+                <div>
+                    <label for="coleobrocas">Coleóbrocas</label>
+                    <input type="checkbox" name="coleobrocas" class="arvore_check">
+                    <label for="lesao">Lesão</label>
+                    <input type="checkbox" name="lesao" class="arvore_check">
+                    <label for="declinio">Declínio</label>
+                    <input type="checkbox" name="declinio" class="arvore_check">
+                    <label for="micelios">Micélios</label>
+                    <input type="checkbox" name="micelios" class="arvore_check">
+                    <label for="anelamento">Anelamento</label>
+                    <input type="checkbox" name="anelamento" class="arvore_check">
+                    <label for="necrose">Necrose</label>
+                    <input type="checkbox" name="necrose" class="arvore_check">
+                </div>
+                <div>
+                    <label for="formigas">Formigas</label>
+                    <input type="checkbox" name="formigas" class="arvore_check">
+                    <label for="fungos">Fungos</label>
+                    <input type="checkbox" name="fungos" class="arvore_check">
+                    <label for="compromete">Compromete condição da Árvore</label>
+                    <input type="checkbox" name="compromete" class="arvore_check">
+                    <label for="monitorar">Monitorar</label>
+                    <input type="checkbox" name="monitorar" class="arvore_check">
+                </div>
+                <div>
+                    <label for="observacoes" class="bloco">Observações</label>
+                    <input type="text" class="arvore_inp" name="observacoes">
+                    <label for="data_cadastro" class="bloco">Data de Cadastro</label>
+                    <input type="date" class="arvore_inp" name="data_cadastro">
+                    <label for="responsavel" class="bloco">Responsável Técnico</label>
+                    <input type="text" class="arvore_inp" name="responsavel">
+                </div>
+                <input type="submit" value="Cadastrar" class="btn_cadastrar">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

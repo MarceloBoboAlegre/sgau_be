@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>CADASTRO</h1>
+        </header>
+        <section>
+            <form action="/cadastrar" method="post">
+                <input type="text" name="nome" id="idnome" placeholder="NOME" required>
+                <input type="text" name="email" id="idemail" placeholder="EMAIL" required>
+                <input type="text" name="telefone" id="idtelefone" placeholder="TELEFONE" required>
+                <input type="password" name="senha" id="idsenha" placeholder="SENHA" required>
+                <input type="password" name="confirma_senha" id="idconfirma_senha" placeholder="CONFIRMAR SENHA" required>
+                <input type="submit" value="Cadastrar" class="botao_form">
+            </form>
+        </section>
+    </main>
+    <div class="exemplo">
+        
+    </div>
+</body>
+</html>

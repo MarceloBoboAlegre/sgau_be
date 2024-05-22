@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div id="conteudo">
+        <nav class="menu">
+            <a href="home.html"><div class="nav_link"><img src="/static/imagens/homeicon.png" alt="Imagem" class="icon">Início</div></a>
+            <a href="arvore_cadastro.html"><div class="nav_link"><img src="/static/imagens/cadastroicon.png" alt="Imagem" class="icon">Cadastro</div></a>
+            <a href="relatorio.html"><div class="nav_link"><img src="/static/imagens/relatorioicon.png" alt="Imagem" class="icon">Relatórios</div></a>
+            <a href="arvore.html"><div class="nav_link"><img src="/static/imagens/arvoresicon.png" alt="Imagem" class="icon">Árvores</div></a>
+            <a href="ocorrencia.html"><div class="nav_link"><img src="/static/imagens/ocorrenciaicon.png" alt="Imagem" class="icon">Ocorrências</div></a>
+            <a href="configuracao.html"><div class="nav_link"><img src="/static/imagens/configicon.png" alt="Imagem" class="icon">Configurações</div></a>
+        </nav>
+        <div class="relatorio">
+            <h1><img src="/static/imagens/Iconrelatorio.png" alt="Imagem de alguns papéis" class="icon">Relatórios</h1>
+            <div class="pesquisa">
+                <h1>Pesquisa</h1>
+                <div class="form_pesquisa">
+                    <form action="/pesquisa" method="post">
+                        <label for="codigo">ID (Código)</label>
+                        <input class="arvore_inp" type="number" name="codigo" id="idcodigo"><br>
+                        <label for="nome_pop">Nome Popular</label>
+                        <input class="arvore_inp" type="text" name="nome_pop" id="idnome_pop"><br>
+                        <label for="data_cadastro">Data de Cadastro</label>
+                        <input class="arvore_inp" type="date" name="data_cadastro" id="iddata"><br>
+                        <input type="submit" value="Pesquisar" class="btn_pesquisas">
+                        <input type="reset" value="Limpar" class="btn_pesquisas" id="limpar">
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
