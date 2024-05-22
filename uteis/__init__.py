@@ -56,7 +56,8 @@ def login_usuario(nome, senha):
         turnoff(myc, db)
 
 
-def cadastro_arvore():
+def cadastro_arvore(lista):
     db = conectar_bd('localhost', 'root', 'Coisadenerd2431$', 'arvores')
     myc = cursor_on(db)
+
     turnoff(myc, db)
