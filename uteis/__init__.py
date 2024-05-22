@@ -56,8 +56,27 @@ def login_usuario(nome, senha):
         turnoff(myc, db)
 
 
-def cadastro_arvore(lista):
-    db = conectar_bd('localhost', 'root', 'Coisadenerd2431$', 'arvores')
+def cadastro_arvore(arvore):
+    db = conectar_bd('localhost', 'root', 'Coisadenerd2431$', 'sgau')
     myc = cursor_on(db)
-
+    sql = 'INSERT INTO arvores ('
+    val = []
+    c = 0
+    for k, v in arvore.items():
+        if c == 0:
+            sql += f'{k.capitalize()}'
+        else:
+            sql += f', {k.capitalize()}'
+        val.append(v)
+        c += 1
+    sql += (') VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,'
+            ' %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)')
+    print(sql)
+    myc.execute(sql, val)
+    db.commit()
+    myc.execute('SELECT * FROM arvores')
+    res = myc.fetchall()
+    for x in res:
+        print(x)
     turnoff(myc, db)
+

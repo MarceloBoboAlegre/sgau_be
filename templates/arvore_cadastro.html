@@ -25,31 +25,41 @@
                 </div>
                 <div>
                     <label for="latitude" class="bloco">Latitude</label>
-                    <input type="text" class="arvore_inp" name="latitude" required>
+                    <input type="number" class="arvore_inp" name="latitude" required>
                     <label for="longitude" class="bloco">Longitude</label>
-                    <input type="text" class="arvore_inp" name="longitude" required>
+                    <input type="number" class="arvore_inp" name="longitude" required>
                     <label for="diametro_copa" class="bloco">Diâmetro da Copa</label>
-                    <input type="text" class="arvore_inp" name="diametro_copa" required>
+                    <input type="number" class="arvore_inp" name="diametro_copa" required>
                 </div>
                 <div>
                     <label for="altura_media" class="bloco">Altura Média</label>
-                    <input type="text" class="arvore_inp" name="altura_media" required>
+                    <input type="number" class="arvore_inp" name="altura_media" required>
                     <label for="largura_calcada" class="bloco">Largura da Calçada</label>
-                    <input type="text" class="arvore_inp" name="largura_calcada" required>
+                    <input type="number" class="arvore_inp" name="largura_calcada" required>
                     <label for="tipo_sistema_radicular" class="bloco">Tipo de Sistema Radicular</label>
                     <input type="text" class="arvore_inp" name="tipo_sistema_radicular" required>
                 </div>
                 <div>
                     <label for="largura_via_publica" class="bloco">Largura da Via Pública</label>
-                    <input type="text" class="arvore_inp" name="largura_via_publica" required>
+                    <input type="number" class="arvore_inp" name="largura_via_publica" required>
                     <label for="fluxo_veiculos" class="bloco">Fluxo de Veículos</label>
-                    <input type="text" class="arvore_inp" name="fluxo_veiculos" required>
+                    <input list="opcao_veiculos" class="arvore_inp" name="fluxo_veiculos" required>
+                    <datalist id="opcao_veiculos">
+                        <option value="ALTA">ALTA</option>
+                        <option value="MODERADO">MODERADO</option>
+                        <option value="BAIXO">BAIXO</option>
+                    </datalist>
                     <label for="passagem_pedestre" class="bloco">Passagem de Pedestre</label>
                     <input type="text" class="arvore_inp" name="passagem_pedestre" required>
                 </div>
                 <div>
                     <label for="fluxo_pedestre" class="bloco">Fluxo de Pedestres</label>
-                    <input type="text" class="arvore_inp" name="fluxo_pedestre" required>
+                    <input list="opcao_pedestres" class="arvore_inp" name="fluxo_pedestre" required>
+                    <datalist id="opcao_pedestres">
+                        <option value="ALTA">ALTA</option>
+                        <option value="MODERADO">MODERADO</option>
+                        <option value="BAIXO">BAIXO</option>
+                    </datalist>
                     <label for="condicao_fitossanitaria" class="bloco">Condição Fitossanitária</label>
                     <input type="text" class="arvore_inp" name="condicao_fitossanitaria" required>
                     <label for="local" class="bloco">Local Afetado</label>

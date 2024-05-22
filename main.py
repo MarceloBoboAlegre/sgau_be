@@ -86,8 +86,24 @@ def entrar_relatorio():
 
 @app.route('/cadastro_arvore', methods=['POST'])
 def cadastrar_arvore():
-    lista = []
-    ut.cadastro_arvore(lista)
+    temp = ''
+    arvore = {}
+    lista = ['especie', 'latitude', 'longitude', 'diametro_copa', 'altura_media', 'largura_calcada', 'pavimento',
+             'largura_via_publica', 'fluxo_veiculos', 'passagem_pedestres', 'fluxo_pedestres', 'rede_eletrica',
+             'elementos_proximos', 'tipo_sistema_radicular', 'afloramento', 'danos_passeio', 'projecao_raizes',
+             'condicao_fitossanitaria', 'cavidade', 'termitas', 'coleobrocas', 'lesao', 'declinio', 'micelios',
+             'anelamento', 'necrose', 'formigas', 'fungos', 'local_afetado', 'compromete_condicao_arvore', 'monitorar',
+             'observacoes', 'data_cadastro']
+    for k in lista:
+        try:
+            temp = request.form.get(k)
+        except Exception as erro:
+            print(f'Houve um erro no cadastro! {erro.__class__}')
+            temp = ''
+        finally:
+            arvore[f"{k}"] = temp
+    ut.cadastro_arvore(arvore)
+    return render_template('home.html')
 
 
 if __name__ in "__main__":
