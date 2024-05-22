@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request
 import uteis as ut
+import mysql.connector as delet
 
 # CRUD
 app = Flask(__name__)
@@ -82,6 +83,11 @@ def entrar_ocorrencia():
 @app.route('/relatorio.html')
 def entrar_relatorio():
     return render_template('relatorio.html')
+
+
+@app.route('/cadastro_arvore', methods=['POST'])
+def cadastrar_arvore():
+    ut.cadastro_arvore()
 
 
 if __name__ in "__main__":
