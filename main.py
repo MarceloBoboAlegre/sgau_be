@@ -106,5 +106,22 @@ def cadastrar_arvore():
     return render_template('home.html')
 
 
+@app.route('/pesquisa', methods=['POST'])
+def pesquisar_arvore():
+    codigo = request.form.get('codigo')
+    nome_pop = request.form.get('nome_pop')
+    data_cad = request.form.get('data_cadastro')
+    res = {"id": '', "nome": '', "data_cadastro": ''}
+    if codigo != '':
+        res['id'] = codigo
+    if nome_pop != '':
+        res['nome'] = nome_pop
+    if data_cad != '':
+        res['data_cadastro'] = data_cad
+    global arvore_achada
+    arvore_achada = ut.procurar_arvore(res)
+    return render_template('pesquisa.html')
+
+
 if __name__ in "__main__":
     app.run(debug=True)

@@ -71,12 +71,22 @@ def cadastro_arvore(arvore):
         c += 1
     sql += (') VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,'
             ' %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)')
-    print(sql)
     myc.execute(sql, val)
     db.commit()
-    myc.execute('SELECT * FROM arvores')
-    res = myc.fetchall()
-    for x in res:
-        print(x)
     turnoff(myc, db)
 
+
+def procurar_arvore(resposta):
+    db = conectar_bd('localhost', 'root', 'Coisadenerd2431$', 'sgau')
+    myc = cursor_on(db)
+    for k, v in resposta.items():
+        sql = f"SELECT * FROM arvores WHERE {k.capitalize()} ='{v}'"
+        try:
+            myc.execute(sql)
+        except Exception as erro:
+            print(f'Não encontrado! {erro.__class__}')
+        else:
+            res = myc.fetchone()
+            break
+    turnoff(myc, db)
+    return res
