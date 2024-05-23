@@ -294,3 +294,11 @@ div.exemplo {
     cursor: pointer;
     background-color: #2a6110;
 }
+
+.msg_erro {
+    position: absolute;
+    left: 80px;
+    background-color: #E6212E;
+    padding: 10px 25px;
+    border-radius: 35px;
+}

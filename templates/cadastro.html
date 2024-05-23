@@ -8,6 +8,12 @@
 </head>
 <body>
     <main>
+        {% set message = get_flashed_messages() %}
+        {% if message %}
+            <h1 class="msg_erro">
+                {{ message[0] }}
+            </h1>
+        {% endif %}
         <header>
             <h1>CADASTRO</h1>
         </header>
