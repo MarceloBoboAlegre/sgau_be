@@ -1,7 +1,8 @@
 from flask import Flask, render_template, redirect, request, flash
 import uteis as ut
+from time import sleep
 
-# CRUD
+# APP
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'IpeRosa321'
 
@@ -65,7 +66,7 @@ def cadastrar():
             print(f'Houve um erro no cadastro! {erro.__class__}')
             return redirect('/cadastro.html')
         else:
-            print("record inserted")
+            flash("Usuário Cadastrado com Sucesso!")
             return render_template('login.html')
     else:
         flash('As senhas colocadas são diferentes')
@@ -80,7 +81,7 @@ def login():
     if logado:
         return render_template('home.html')
     else:
-        print('Senha ou Usuário incorretos!')
+        flash('Senha ou Usuário incorretos!')
         return render_template('login.html')
 
 

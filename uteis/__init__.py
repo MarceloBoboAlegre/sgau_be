@@ -48,9 +48,12 @@ def login_usuario(nome, senha):
     except Exception as erro:
         print(f'Usuário não encontrado! {erro.__class__}')
     else:
-        if bcrypt.checkpw(sen, res[2].encode('utf-8')):
-            return True
-        else:
+        try: 
+            if bcrypt.checkpw(sen, res[2].encode('utf-8')):
+                return True
+            else:
+                return False
+        except:
             return False
     finally:
         turnoff(myc, db)

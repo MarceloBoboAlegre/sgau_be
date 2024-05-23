@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    <main>
-        {% set message = get_flashed_messages() %}
+    {% set message = get_flashed_messages() %}
         {% if message %}
-            <h1 class="msg_erro">
+            <h1 id="msg_cadastro">
                 {{ message[0] }}
             </h1>
         {% endif %}
+    <main>
         <header>
             <h1>CADASTRO</h1>
         </header>

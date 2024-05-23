@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
+    {% set message = get_flashed_messages() %}
+    {% if message %}
+        <h1 id="msg_login">
+            {{ message[0] }}
+        </h1>
+    {% endif %}
     <main id="login">
         <header>
             <h1>LOGIN</h1>
