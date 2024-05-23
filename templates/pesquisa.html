@@ -16,6 +16,28 @@
             <a href="ocorrencia.html"><div class="nav_link"><img src="/static/imagens/ocorrenciaicon.png" alt="Imagem" class="icon">Ocorrências</div></a>
             <a href="configuracao.html"><div class="nav_link"><img src="/static/imagens/configicon.png" alt="Imagem" class="icon">Configurações</div></a>
         </nav>
+        <div class="pag_pesquisa">
+            <h1><img src="/static/imagens/Iconrelatorio.png" alt="Imagem de alguns papéis" class="icon">Relatórios</h1>
+            <div class="pesquisa_resultado">
+                <h1>Resultado</h1>
+                <div class="pesquisa_tabela">
+                    {% if pesquisa %}
+                        <table id="parte1">
+                        {% for k, v in pesquisa.items() %}
+                            {% if k == 'danos_passeio' %}
+                                </table>
+                                <table id="parte2">
+                            {% endif %}
+                            <tr>
+                                <td>{{ k }}</td>
+                                <td>{{ v }}</td>
+                            </tr>
+                        {% endfor %}
+                        </table>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

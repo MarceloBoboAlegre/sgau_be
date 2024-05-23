@@ -5,6 +5,7 @@ from time import sleep
 # APP
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'IpeRosa321'
+logado = False
 
 
 @app.route('/')
@@ -24,32 +25,56 @@ def entrar_login():
 
 @app.route('/home.html')
 def entrar_home():
-    return render_template('home.html')
+    if logado:
+        return render_template('home.html')
+    else:
+        flash('Não está logado!')
+        return redirect('/')
 
 
 @app.route('/arvore_cadastro.html')
 def entrar_arvore_cadastro():
-    return render_template('arvore_cadastro.html')
+    if logado:
+        return render_template('arvore_cadastro.html')
+    else:
+        flash('Não está logado!')
+        return redirect('/')
 
 
 @app.route('/arvore.html')
 def entrar_arvores():
-    return render_template('arvore.html')
+    if logado:
+        return render_template('arvore.html')
+    else:
+        flash('Não está logado!')
+        return redirect('/')
 
 
 @app.route('/configuracao.html')
 def entrar_configuracao():
-    return render_template('configuracao.html')
+    if logado:
+        return render_template('configuracao.html')
+    else:
+        flash('Não está logado!')
+        return redirect('/')
 
 
 @app.route('/ocorrencia.html')
 def entrar_ocorrencia():
-    return render_template('ocorrencia.html')
+    if logado:
+        return render_template('ocorrencia.html')
+    else:
+        flash('Não está logado!')
+        return redirect('/')
 
 
 @app.route('/relatorio.html')
 def entrar_relatorio():
-    return render_template('relatorio.html')
+    if logado:
+        return render_template('relatorio.html')
+    else:
+        flash('Não está logado!')
+        return redirect('/')
 
 
 @app.route('/cadastrar', methods=['POST'])
@@ -77,12 +102,13 @@ def cadastrar():
 def login():
     nome = request.form.get('usuario')
     senha = request.form.get('senha')
+    global logado
     logado = ut.login_usuario(nome, senha)
     if logado:
-        return render_template('home.html')
+        return redirect('/home.html')
     else:
         flash('Senha ou Usuário incorretos!')
-        return render_template('login.html')
+        return redirect('/')
 
 
 @app.route('/cadastro_arvore', methods=['POST'])
@@ -119,9 +145,26 @@ def pesquisar_arvore():
         res['nome'] = nome_pop
     if data_cad != '':
         res['data_cadastro'] = data_cad
-    global arvore_achada
     arvore_achada = ut.procurar_arvore(res)
-    return render_template('pesquisa.html')
+    pesquisa = {'id': 0, 'cod_ref': 0, 'nome': '', 'especie': '', 'latitude': 0, 'longitude': 0, 
+                'diametro_copa': 0, 'altura_media': 0, 'largura_calcada': 0, 'pavimento': '', 'largura_via_publica': '', 'fluxo_veiculos': 0, 'passagem_pedestres': '', 'fluxo_pedestres': 0, 'rede_eletrica': '', 'elementos_proximos': '', 'tipo_sistema_radicular': '', 'afloramento': '', 'danos_passeio': '', 'projecao_raizes': '','condicao_fitossanitaria': '', 'cavidade': '', 'termitas': '', 'coleobrocas': '', 'lesao': '', 'declinio': '', 'micelios': '', 'anelamento': '', 'necrose': '', 'formigas': '', 'fungos': '', 'local_afetado': '', 'compromete_condicao_arvore': '', 'monitorar': '', 'observacoes': '', 'data_cadastro': ''}
+    c = 0
+    for k in pesquisa.keys():
+        if arvore_achada[c] == None:
+            pesquisa[k] = 'Não possui'
+        else:
+            pesquisa[k] = arvore_achada[c]
+        c += 1
+    return render_template('pesquisa.html', pesquisa=pesquisa)
+
+
+@app.route('/pesquisa.html')
+def entrar_pesquisa():
+    if logado:
+        return render_template('pesquisa.html')
+    else:
+        flash('Não está logado!')
+        return redirect('/')
 
 
 if __name__ in "__main__":
