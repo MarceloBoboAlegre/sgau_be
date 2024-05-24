@@ -39,8 +39,12 @@ def cadastro_usuario(nome, email, telefone, senha):
         except:
             print('ok')
         else:
-            igual = True
-            break
+            res = myc.fetchone()
+            print(res)
+        finally:
+            if res != None:
+                igual = True
+                break
     if igual:
         return False
     else:
