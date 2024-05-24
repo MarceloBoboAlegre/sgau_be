@@ -93,3 +93,22 @@ def procurar_arvore(resposta):
             break
     turnoff(myc, db)
     return res
+
+
+def lista_arvores():
+    db = conectar_bd('localhost', 'root', 'Coisadenerd2431$', 'sgau')
+    myc = cursor_on(db)
+    sql = 'SELECT * FROM arvores'
+    myc.execute(sql)
+    res = myc.fetchall()
+    lista = list()
+    dicionario = dict()
+    for a in res:
+        dicionario['id'] = a[0]
+        dicionario['nome'] = a[2]
+        dicionario['especie'] = a[3]
+        dicionario['data_cadastro'] = a[35]
+        lista.append(dicionario.copy())
+    print(lista)
+    turnoff(myc, db)
+    return lista

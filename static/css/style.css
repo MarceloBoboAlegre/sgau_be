@@ -321,8 +321,8 @@ table, th, td {
 
 .pag_pesquisa {
     display: inline-block;
-    position: relative;
-    bottom: 445px;
+    position: absolute;
+    bottom: 45px;
     margin-left: 50px;
 }
 
@@ -358,4 +358,35 @@ table, th, td {
     position: relative;
     bottom: 454px;
     left: 300px;
+}
+
+.pag_arvore {
+    display: inline-block;
+    position: absolute;
+    bottom: 350px;
+    left: 300px;
+    margin-left: 50px;
+}
+
+.arvore_resultado {
+    display: block;
+    position: relative;
+    top: 80px;
+    left: 200px;
+    background-color: #E4E4E4;
+    width: 710px;
+    border-radius: 5px;
+}
+
+.arvore_resultado > h1 {
+    padding: 10px 20px;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.arvore_tabela {
+    position: relative;
+    display: block;
+    padding: 50px 50px 100px 120px;
+    background-color: rgb(255, 250, 250);
 }

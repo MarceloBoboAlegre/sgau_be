@@ -44,7 +44,8 @@ def entrar_arvore_cadastro():
 @app.route('/arvore.html')
 def entrar_arvores():
     if logado:
-        return render_template('arvore.html')
+        tabela = ut.lista_arvores()
+        return render_template('arvore.html', tabela=tabela)
     else:
         flash('Não está logado!')
         return redirect('/')

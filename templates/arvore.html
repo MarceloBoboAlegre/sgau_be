@@ -17,5 +17,31 @@
             <a href="configuracao.html"><div class="nav_link"><img src="/static/imagens/configicon.png" alt="Imagem" class="icon">Configurações</div></a>
         </nav>
     </div>
+    <div class="pag_arvore">
+        <h1>Árvores</h1>
+        <div class="arvore_resultado">
+            <h1>Árvores Cadastradas</h1>
+            <div class="arvore_tabela">
+                {% if tabela %}
+                    <table>
+                        <tr>
+                            <td>ID</td>
+                            <td>Nome Popular</td>
+                            <td>Nome Científico</td>
+                            <td>Data Cadastro</td>
+                        </tr>
+                    {% for a in tabela %}
+                        <tr>
+                            <td>{{ a['id'] }}</td>
+                            <td>{{ a['nome'] }}</td>
+                            <td>{{ a['especie'] }}</td>
+                            <td>{{ a['data_cadastro'] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </body>
 </html>
