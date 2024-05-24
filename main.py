@@ -26,7 +26,9 @@ def entrar_login():
 @app.route('/home.html')
 def entrar_home():
     if logado:
-        return render_template('home.html')
+        temp = ut.lista_arvores()
+        quantia = len(temp)
+        return render_template('home.html', quantia=quantia)
     else:
         flash('Não está logado!')
         return redirect('/')
@@ -87,13 +89,17 @@ def cadastrar():
     con_senha = request.form.get('confirma_senha')
     if senha == con_senha:
         try:
-            ut.cadastro_usuario(nome, email, telefone, senha)
+            res = ut.cadastro_usuario(nome, email, telefone, senha)
         except Exception as erro:
             print(f'Houve um erro no cadastro! {erro.__class__}')
             return redirect('/cadastro.html')
         else:
-            flash("Usuário Cadastrado com Sucesso!")
-            return render_template('login.html')
+            if res:
+                flash("Usuário Cadastrado com Sucesso!")
+                return render_template('login.html')
+            else:
+                flash('Alguma informação já foi cadastrada!')
+                return redirect('/cadastro.html')
     else:
         flash('As senhas colocadas são diferentes')
         return redirect('/cadastro.html')
@@ -153,6 +159,11 @@ def pesquisar_arvore():
     for k in pesquisa.keys():
         if arvore_achada[c] == None:
             pesquisa[k] = 'Não possui'
+        elif c > 16 and c != 35:
+            if arvore_achada[c] == 1:
+                pesquisa[k] = 'Possui'
+            else:
+                pesquisa[k] = 'Não possui'
         else:
             pesquisa[k] = arvore_achada[c]
         c += 1

@@ -25,15 +25,32 @@ def turnoff(cursor, database):
 def cadastro_usuario(nome, email, telefone, senha):
     db = conectar_bd('localhost', 'root', 'Coisadenerd2431$', 'sgau')
     myc = cursor_on(db)
-    sql = ('INSERT INTO user (NOME, PASSWORD_HASH, EMAIL, TELEFONE, STATUS, NIVEL_ACESSO) '
-           'VALUES (%s, %s, %s, %s, %s, %s)')
+    igual = False
     sen = senha.encode('utf-8')
     salt = bcrypt.gensalt()
     hash_senha = bcrypt.hashpw(sen, salt)
-    val = (nome, hash_senha, email, telefone, 'ACTIVE', 'USUÁRIO')
-    myc.execute(sql, val)
-    db.commit()
-    turnoff(myc, db)
+
+    lista = [nome, email, telefone, hash_senha]
+    cod = ['nome', 'email', 'telefone', 'password_hash']
+    for c in range(0, 4):
+        sql = f"SELECT * FROM user WHERE {cod[c]} ='{lista[c]}'"
+        try:
+            myc.execute(sql)
+        except:
+            print('ok')
+        else:
+            igual = True
+            break
+    if igual:
+        return False
+    else:
+        sql = ('INSERT INTO user (NOME, PASSWORD_HASH, EMAIL, TELEFONE, STATUS, NIVEL_ACESSO) '
+            'VALUES (%s, %s, %s, %s, %s, %s)')
+        val = (nome, hash_senha, email, telefone, 'ACTIVE', 'USUÁRIO')
+        myc.execute(sql, val)
+        db.commit()
+        turnoff(myc, db)
+        return True
 
 
 def login_usuario(nome, senha):
@@ -70,7 +87,10 @@ def cadastro_arvore(arvore):
             sql += f'{k.capitalize()}'
         else:
             sql += f', {k.capitalize()}'
-        val.append(v)
+        if v == 'on':
+            val.append(True)
+        else:
+            val.append(v)
         c += 1
     sql += (') VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,'
             ' %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)')
