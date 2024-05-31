@@ -22,7 +22,7 @@ main {
 
 main#login {
     position: relative;
-    bottom: 120px;
+    bottom: 9vw;
 }
 
 header {
@@ -48,11 +48,10 @@ form > input{
     color: rgb(148, 145, 145);
     font-size: larger;
     text-align: center;
-
-    height: 55px;
-    width: 300px;
+    height: 4vw;
+    width: 22vw;
     margin: 35px auto 10px auto;
-    border-radius: 35px;
+    border-radius: 3vw;
     padding: 5px 80px;
     display: block;
 
@@ -132,7 +131,7 @@ img {
 }
 
 .menu {
-    height: 709px;
+    height: 49.27vw;
     width: 17%;
     background-color: #3F7924;
     padding-top: 30px;
@@ -147,8 +146,6 @@ img {
 
 .nav_link {
     padding: 30px 30px;
-    width: 185px;
-    height: 5%;
     text-align: justify;
     color: white;
 }
