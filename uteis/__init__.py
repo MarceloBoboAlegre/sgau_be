@@ -133,6 +133,22 @@ def lista_arvores():
         dicionario['especie'] = a[3]
         dicionario['data_cadastro'] = a[35]
         lista.append(dicionario.copy())
+    turnoff(myc, db)
+    return lista
+
+
+def marcar_mapa():
+    db = conectar_bd('localhost', 'root', 'Coisadenerd2431$', 'sgau')
+    myc = cursor_on(db)
+    sql = 'SELECT * FROM arvores'
+    myc.execute(sql)
+    res = myc.fetchall()
+    lista = list()
+    dicionario = dict()
+    for a in res:
+        dicionario['latitude'] = float(a[4])
+        dicionario['longitude'] = float(a[5])
+        lista.append(dicionario.copy())
     print(lista)
     turnoff(myc, db)
     return lista
