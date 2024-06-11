@@ -23,7 +23,7 @@ def turnoff(cursor, database):
 
 
 def cadastro_usuario(nome, email, telefone, senha):
-    db = conectar_bd('localhost', 'root', '', 'sgau')
+    db = conectar_bd('159.65.244.226', 'marialmm', '@Rb0n1z3.2024', 'sgau')
     myc = cursor_on(db)
     igual = False
     sen = senha.encode('utf-8')
@@ -58,7 +58,7 @@ def cadastro_usuario(nome, email, telefone, senha):
 
 
 def login_usuario(nome, senha):
-    db = conectar_bd('localhost', 'root', '', 'sgau')
+    db = conectar_bd('159.65.244.226', 'marialmm', '@Rb0n1z3.2024', 'sgau')
     myc = cursor_on(db)
     sql = 'SELECT * FROM user WHERE NOME = %s'
     prc = (nome, )
@@ -81,7 +81,7 @@ def login_usuario(nome, senha):
 
 
 def cadastro_arvore(arvore):
-    db = conectar_bd('localhost', 'root', '', 'sgau')
+    db = conectar_bd('159.65.244.226', 'marialmm', '@Rb0n1z3.2024', 'sgau')
     myc = cursor_on(db)
     sql = 'INSERT INTO arvores ('
     val = []
@@ -104,7 +104,7 @@ def cadastro_arvore(arvore):
 
 
 def procurar_arvore(resposta):
-    db = conectar_bd('localhost', 'root', '', 'sgau')
+    db = conectar_bd('159.65.244.226', 'marialmm', '@Rb0n1z3.2024', 'sgau')
     myc = cursor_on(db)
     for k, v in resposta.items():
         sql = f"SELECT * FROM arvores WHERE {k.capitalize()} ='{v}'"
@@ -120,7 +120,7 @@ def procurar_arvore(resposta):
 
 
 def lista_arvores():
-    db = conectar_bd('localhost', 'root', '', 'sgau')
+    db = conectar_bd('159.65.244.226', 'marialmm', '@Rb0n1z3.2024', 'sgau')
     myc = cursor_on(db)
     sql = 'SELECT * FROM arvores'
     myc.execute(sql)
@@ -138,7 +138,7 @@ def lista_arvores():
 
 
 def marcar_mapa():
-    db = conectar_bd('localhost', 'root', '', 'sgau')
+    db = conectar_bd('159.65.244.226', 'marialmm', '@Rb0n1z3.2024', 'sgau')
     myc = cursor_on(db)
     sql = 'SELECT * FROM arvores'
     myc.execute(sql)
