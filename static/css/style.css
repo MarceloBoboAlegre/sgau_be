@@ -113,8 +113,8 @@ form > a:hover {
 
 img {
     display: inline-block;
-    width: 49%;
-    height: 680px;
+    width: 48%;
+    height: 670px;
     margin: 0px;
     border-radius: 5px;
 }
@@ -359,7 +359,7 @@ table, th, td {
 .pag_arvore {
     display: inline-block;
     position: absolute;
-    bottom: 350px;
+    bottom: 260px;
     left: 300px;
     margin-left: 50px;
 }
