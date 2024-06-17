@@ -23,6 +23,13 @@ def entrar_login():
     return render_template('login.html')
 
 
+@app.route('/login.html')
+def sair():
+    global logado
+    logado = False
+    return redirect('/')
+
+
 @app.route('/home.html')
 def entrar_home():
     if logado:
