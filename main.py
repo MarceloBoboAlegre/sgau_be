@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'IpeRosa321'
 logado = False
 
-
+# ROTAS
 @app.route('/')
 def home():
     return render_template('login.html')

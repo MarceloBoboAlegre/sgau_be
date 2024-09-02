@@ -21,28 +21,38 @@
             <h1><img src="/static/imagens/arvore.png" alt="Imagem de uma árvore" class="icon">Cadastro de Árvores</h1>
             <form action="/cadastro_arvore" method="post">
                 <div class="especie">
-                    <label for="especie">Espécie</label>
+                    <label for="especie" class="bloco">Espécie</label>
                     <input type="text" class="arvore_inp" name="especie" required>
                 </div>
-                <div>
+                <div class="q">
                     <label for="latitude" class="bloco">Latitude</label>
                     <input type="number" class="arvore_inp" name="latitude" required>
+                </div>
+                <div class="q">
                     <label for="longitude" class="bloco">Longitude</label>
                     <input type="number" class="arvore_inp" name="longitude" required>
+                </div>
+                <div class="q">
                     <label for="diametro_copa" class="bloco">Diâmetro da Copa</label>
                     <input type="number" class="arvore_inp" name="diametro_copa" required>
                 </div>
-                <div>
+                <div class="q">
                     <label for="altura_media" class="bloco">Altura Média</label>
                     <input type="number" class="arvore_inp" name="altura_media" required>
+                </div>
+                <div class="q">
                     <label for="largura_calcada" class="bloco">Largura da Calçada</label>
                     <input type="number" class="arvore_inp" name="largura_calcada" required>
+                </div>
+                <div class="q">
                     <label for="tipo_sistema_radicular" class="bloco">Tipo de Sistema Radicular</label>
                     <input type="text" class="arvore_inp" name="tipo_sistema_radicular" required>
                 </div>
-                <div>
+                <div class="q">
                     <label for="largura_via_publica" class="bloco">Largura da Via Pública</label>
                     <input type="number" class="arvore_inp" name="largura_via_publica" required>
+                </div>
+                <div class="q">
                     <label for="fluxo_veiculos" class="bloco">Fluxo de Veículos</label>
                     <input list="opcao_veiculos" class="arvore_inp" name="fluxo_veiculos" required>
                     <datalist id="opcao_veiculos">
@@ -50,10 +60,12 @@
                         <option value="MODERADO">MODERADO</option>
                         <option value="BAIXO">BAIXO</option>
                     </datalist>
+                </div>
+                <div class="q">
                     <label for="passagem_pedestre" class="bloco">Passagem de Pedestre</label>
                     <input type="text" class="arvore_inp" name="passagem_pedestre" required>
                 </div>
-                <div>
+                <div class="q">
                     <label for="fluxo_pedestre" class="bloco">Fluxo de Pedestres</label>
                     <input list="opcao_pedestres" class="arvore_inp" name="fluxo_pedestre" required>
                     <datalist id="opcao_pedestres">
@@ -61,12 +73,16 @@
                         <option value="MODERADO">MODERADO</option>
                         <option value="BAIXO">BAIXO</option>
                     </datalist>
+                </div>
+                <div class="q">
                     <label for="condicao_fitossanitaria" class="bloco">Condição Fitossanitária</label>
                     <input type="text" class="arvore_inp" name="condicao_fitossanitaria" required>
+                </div>
+                <div class="q">
                     <label for="local" class="bloco">Local Afetado</label>
                     <input type="text" class="arvore_inp" name="local" required>
                 </div>
-                <div class="selecao">
+                <div class="q">
                     <label for="rede_eletrica" class="bloco">Rede Elétrica</label>
                     <input list="opcao" class="arvore_inp" name="rede_eletrica" placeholder="Selecione" required>
                     <datalist id="opcao">
@@ -74,14 +90,18 @@
                         <option value="Secundaria">Secundária</option>
                         <option value="Telefonica">Telefônica</option>
                     </datalist>
-                    <label for="elementos_proximos">Elementos Próximos</label>
+                </div>
+                <div class="q">
+                    <label for="elementos_proximos" class="bloco">Elementos Próximos</label>
                     <input list="opcao2" class="arvore_inp" name="elementos_proximos" placeholder="Selecione" required>
                     <datalist id="opcao2">
                         <option value="Boca de Lobo">Boca de Lobo</option>
                         <option value="Poste de Energia">Poste de Energia</option>
                         <option value="Telefonica">Telefônica</option>
                     </datalist>
-                    <label for="pavimento">Pavimento</label>
+                </div>
+                <div class="q">
+                    <label for="pavimento" class="bloco">Pavimento</label>
                     <input list="opcao3" class="arvore_inp" name="pavimento" placeholder="Selecione" required>
                     <datalist id="opcao3">
                         <option value="Cimento">Cimento</option>
@@ -89,47 +109,75 @@
                         <option value="Ceramico">Cerâmico</option>
                     </datalist>
                 </div>
-                <div>
-                    <label for="afloramento">Afloramento</label>
+                <div class="caixa">
+                    <label for="afloramento" class="bloco">Afloramento</label>
                     <input type="checkbox" name="afloramento" class="arvore_check">
-                    <label for="danos_passeio">Danos no Passeio</label>
+                </div>
+                <div class="caixa">
+                    <label for="danos_passeio" class="bloco">Danos no Passeio</label>
                     <input type="checkbox" name="danos_passeio" class="arvore_check">
-                    <label for="projecao_raizes">Projeção das Raízes</label>
+                </div>
+                <div class="caixa">
+                    <label for="projecao_raizes" class="bloco">Projeção das Raízes</label>
                     <input type="checkbox" name="projecao_raizes" class="arvore_check">
-                    <label for="cavidade">Cavidade</label>
+                </div>
+                <div class="caixa">
+                    <label for="cavidade" class="bloco">Cavidade</label>
                     <input type="checkbox" name="cavidade" class="arvore_check">
-                    <label for="termitas">Termitas</label>
+                </div>
+                <div class="caixa">
+                    <label for="termitas" class="bloco">Termitas</label>
                     <input type="checkbox" name="termitas" class="arvore_check">
                 </div>
-                <div>
-                    <label for="coleobrocas">Coleóbrocas</label>
+                <div class="caixa">
+                    <label for="coleobrocas" class="bloco">Coleóbrocas</label>
                     <input type="checkbox" name="coleobrocas" class="arvore_check">
-                    <label for="lesao">Lesão</label>
+                </div>
+                <div class="caixa">
+                    <label for="lesao" class="bloco">Lesão</label>
                     <input type="checkbox" name="lesao" class="arvore_check">
-                    <label for="declinio">Declínio</label>
+                </div>
+                <div class="caixa">
+                    <label for="declinio" class="bloco">Declínio</label>
                     <input type="checkbox" name="declinio" class="arvore_check">
-                    <label for="micelios">Micélios</label>
+                </div>
+                <div class="caixa">
+                    <label for="micelios" class="bloco">Micélios</label>
                     <input type="checkbox" name="micelios" class="arvore_check">
-                    <label for="anelamento">Anelamento</label>
+                </div>
+                <div class="caixa">
+                    <label for="anelamento" class="bloco">Anelamento</label>
                     <input type="checkbox" name="anelamento" class="arvore_check">
-                    <label for="necrose">Necrose</label>
+                </div>
+                <div class="caixa">
+                    <label for="necrose" class="bloco">Necrose</label>
                     <input type="checkbox" name="necrose" class="arvore_check">
                 </div>
-                <div>
-                    <label for="formigas">Formigas</label>
+                <div class="caixa">
+                    <label for="formigas" class="bloco">Formigas</label>
                     <input type="checkbox" name="formigas" class="arvore_check">
-                    <label for="fungos">Fungos</label>
+                </div>
+                <div class="caixa">
+                    <label for="fungos" class="bloco">Fungos</label>
                     <input type="checkbox" name="fungos" class="arvore_check">
-                    <label for="compromete_condicao_arvore">Compromete condição da Árvore</label>
+                </div>
+                <div class="caixa">
+                    <label for="compromete_condicao_arvore" class="bloco">Compromete condição da Árvore</label>
                     <input type="checkbox" name="compromete_condicao_arvore" class="arvore_check">
-                    <label for="monitorar">Monitorar</label>
+                </div>
+                <div class="caixa">
+                    <label for="monitorar" class="bloco">Monitorar</label>
                     <input type="checkbox" name="monitorar" class="arvore_check">
                 </div>
-                <div>
+                <div class="q">
                     <label for="observacoes" class="bloco">Observações</label>
                     <input type="text" class="arvore_inp" name="observacoes">
+                </div>
+                <div class="q">
                     <label for="data_cadastro" class="bloco">Data de Cadastro</label>
                     <input type="date" class="arvore_inp" name="data_cadastro" required>
+                </div>
+                <div class="q">
                     <label for="responsavel" class="bloco">Responsável Técnico</label>
                     <input type="text" class="arvore_inp" name="responsavel">
                 </div>
