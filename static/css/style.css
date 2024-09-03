@@ -398,7 +398,7 @@ table, th, td {
 #home {
     position: absolute;
     bottom: 25px;
-    left: 660px;
+    left: 260px;
 }
 
 #map {
@@ -415,12 +415,29 @@ table, th, td {
     border: 5px solid rgb(51, 233, 51);
     border-radius: 200px;
     color: rgb(51, 233, 51);
-    margin-left: 80px;
+    margin-left: 480px;
 }
 
 #home > h2 {
-    margin: 0px 0px 80px 50px;
+    margin: 0px 0px 80px 450px;
 }
+
+#map-container {
+    width: 80vw;
+    height: 56vh;
+  }
+
+#search-container {
+    margin: 10px 0 0 10px;
+  }
+  
+#search-input {
+    width: 300px;
+  }
+  
+#current-location-container {
+    margin: 0 10px 10px 0;
+  }
 
 @media (min-width: 1300px) and (max-width: 1370px) {
     .menu {
