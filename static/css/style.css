@@ -422,22 +422,10 @@ table, th, td {
     margin: 0px 0px 80px 450px;
 }
 
-#map-container {
-    width: 80vw;
-    height: 56vh;
-  }
-
-#search-container {
-    margin: 10px 0 0 10px;
-  }
-  
-#search-input {
-    width: 300px;
-  }
-  
-#current-location-container {
-    margin: 0 10px 10px 0;
-  }
+#map {
+    width: 167%;
+    left: 52%;
+}
 
 @media (min-width: 1300px) and (max-width: 1370px) {
     .menu {

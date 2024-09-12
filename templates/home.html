@@ -6,8 +6,12 @@
     <link rel="stylesheet" href="../static/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/static/imagens/favicon.ico" type="image/x-icon">
-    <script type="module" defer src="https://cdn.what3words.com/javascript-components@4.8.0/dist/what3words/what3words.esm.js"></script>
-    <script nomodule defer src="https://cdn.what3words.com/javascript-components@4.8.0/dist/what3words/what3words.js"></script> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 </head>
 <body>
     <div id="conteudo">
@@ -23,36 +27,25 @@
     <div id="home">
         <h1 id="quantia">{{ quantia }}</h1>
         <h2>Árvores Cadastradas</h2>
-        <what3words-map
-            id="w3w-map"
-            api_key="7BAF2GXB"
-            map_api_key="AIzaSyCroqM23OWNN3qWbnBPJ-qtU2lbVd6m18A"
-            lng="-45.40281"
-            lat="-23.79312"
-            disable_default_ui
-            fullscreen_control
-            map_type_control
-            zoom_control
-            current_location_control_position="9"
-            fullscreen_control_position="3"
-            search_control_position="2"
-            words="contour.qualifying.overboard"
-          >
-            <div slot="map" id="map-container"></div>
-            <div slot="search-control" id="search-container">
-            <what3words-autosuggest>
-                <input
-                    id="search-input"
-                    type="text"
-                    placeholder="Find your address"
-                    autocomplete="off"
-                />
-                </what3words-autosuggest>
-            </div>
-            <div slot="current-location-control" id="current-location-container">
-                <button>Current Location</button>
-            </div>
-          </what3words-map>
+        <div id="map">
+            <script>
+                var map = L.map('map').setView([-23.79, -45.40], 13);
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+                L.marker([-23.79324, -45.40281]).addTo(map)
+                .bindPopup('Marcador de onde a árvore está')
+                .openPopup();
+
+                L.marker([-23.793207129759512, -45.40335560551633]).addTo(map);
+
+                map.on('click', function(ev) {
+                    alert(ev.latlng); // ev is an event object (MouseEvent in this case)
+                });
+            </script>
+        </div>
     </div>
 </body>
 </html>
