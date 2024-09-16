@@ -20,17 +20,21 @@
         <div class="form_arvore">
             <h1><img src="/static/imagens/arvore.png" alt="Imagem de uma árvore" class="icon">Cadastro de Árvores</h1>
             <form action="/cadastro_arvore" method="post">
-                <div class="especie">
+                <div class="linha">
                     <label for="especie" class="bloco">Espécie</label>
                     <input type="text" class="arvore_inp" name="especie" required>
                 </div>
+                <div class="linha">
+                    <label for="nome" class="bloco">Nome Popular</label>
+                    <input type="text" class="arvore_inp" name="nome" required>
+                </div>
                 <div class="q">
                     <label for="latitude" class="bloco">Latitude</label>
-                    <input type="number" class="arvore_inp" name="latitude" required>
+                    <input type="number" class="arvore_inp" name="latitude" step="any" required>
                 </div>
                 <div class="q">
                     <label for="longitude" class="bloco">Longitude</label>
-                    <input type="number" class="arvore_inp" name="longitude" required>
+                    <input type="number" class="arvore_inp" name="longitude" step="any" required>
                 </div>
                 <div class="q">
                     <label for="diametro_copa" class="bloco">Diâmetro da Copa</label>

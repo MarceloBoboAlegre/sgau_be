@@ -129,7 +129,7 @@ def login():
 def cadastrar_arvore():
     temp = ''
     arvore = {}
-    lista = ['especie', 'latitude', 'longitude', 'diametro_copa', 'altura_media', 'largura_calcada', 'pavimento',
+    lista = ['nome', 'especie', 'latitude', 'longitude', 'diametro_copa', 'altura_media', 'largura_calcada', 'pavimento',
              'largura_via_publica', 'fluxo_veiculos', 'passagem_pedestres', 'fluxo_pedestres', 'rede_eletrica',
              'elementos_proximos', 'tipo_sistema_radicular', 'afloramento', 'danos_passeio', 'projecao_raizes',
              'condicao_fitossanitaria', 'cavidade', 'termitas', 'coleobrocas', 'lesao', 'declinio', 'micelios',

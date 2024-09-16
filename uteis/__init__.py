@@ -97,7 +97,7 @@ def cadastro_arvore(arvore):
             val.append(v)
         c += 1
     sql += (') VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,'
-            ' %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)')
+            ' %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)')
     myc.execute(sql, val)
     db.commit()
     turnoff(myc, db)

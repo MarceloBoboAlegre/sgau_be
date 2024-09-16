@@ -159,7 +159,7 @@ img {
 .form_arvore {
     display: inline-block;
     position: absolute;
-    bottom: 30px;
+    bottom: 2%;
     margin-left: 50px;
     font-size: 0.92em;
 }
@@ -190,7 +190,7 @@ div.q {
     color: black;
 }
 
-.especie > input {
+.linha > input {
     width: 79%;
 }
 
@@ -326,17 +326,16 @@ table, th, td {
 .pag_pesquisa {
     display: inline-block;
     position: absolute;
-    bottom: 45px;
+    bottom: 3%;
     margin-left: 50px;
 }
 
 .pesquisa_resultado {
     display: block;
     position: relative;
-    top: 25px;
-    left: 55px;
+    margin-top: 20px;
     background-color: #E4E4E4;
-    width: 975px;
+    width: 124%;
     border-radius: 5px;
 }
 
@@ -355,13 +354,14 @@ table, th, td {
 }
 
 #parte1 {
+    display: inline-block;
     position: relative;
+    margin-right: 5px;
 }
 
 #parte2 {
+    display: inline-block;
     position: relative;
-    bottom: 454px;
-    left: 300px;
 }
 
 .pag_arvore {
