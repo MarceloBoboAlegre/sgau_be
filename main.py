@@ -35,7 +35,8 @@ def entrar_home():
     if logado:
         temp = ut.lista_arvores()
         quantia = len(temp)
-        return render_template('home.html', quantia=quantia)
+        marcador = [quantia, temp]
+        return render_template('home.html', marcador=marcador)
     else:
         flash('Não está logado!')
         return redirect('/')
@@ -144,7 +145,7 @@ def cadastrar_arvore():
         finally:
             arvore[f"{k}"] = temp
     ut.cadastro_arvore(arvore)
-    return render_template('home.html')
+    return render_template('relatorio.html')
 
 
 @app.route('/pesquisa', methods=['POST'])

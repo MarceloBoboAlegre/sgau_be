@@ -128,6 +128,8 @@ def lista_arvores():
     lista = list()
     dicionario = dict()
     for a in res:
+        dicionario['latitude'] = a[4]
+        dicionario['longitude'] = a[5]
         dicionario['id'] = a[0]
         dicionario['nome'] = a[2]
         dicionario['especie'] = a[3]

@@ -25,7 +25,7 @@
         </nav>
     </div>
     <div id="home">
-        <h1 id="quantia">{{ quantia }}</h1>
+        <h1 id="quantia">{{ marcador[0] }}</h1>
         <h2>Árvores Cadastradas</h2>
         <div id="map">
             <script>
@@ -35,15 +35,16 @@
                     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                 }).addTo(map);
 
-                L.marker([-23.79324, -45.40281]).addTo(map);
-
-                L.marker([-23.793207129759512, -45.40335560551633]).addTo(map);
-
                 map.on('click', function(ev) {
                     alert(ev.latlng); // ev is an event object (MouseEvent in this case)
                 });
             </script>
         </div>
+        {% for c in range(marcador[0]) %}
+            <script>
+                L.marker([{{marcador[1][c]['latitude']}}, {{marcador[1][c]['longitude']}}]).addTo(map);
+            </script>
+        {% endfor %}
     </div>
 </body>
 </html>
