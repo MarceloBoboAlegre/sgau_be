@@ -6,12 +6,16 @@
     <link rel="stylesheet" href="../static/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/static/imagens/favicon.ico" type="image/x-icon">
+    
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+
+    <script src="https://cdn.maptiler.com/maptiler-geocoding-control/v1.3.3/leaflet.umd.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-geocoding-control/v1.3.3/style.css" rel="stylesheet">
 </head>
 <body>
     <div id="conteudo">
@@ -38,6 +42,29 @@
                 map.on('click', function(ev) {
                     alert(ev.latlng); // ev is an event object (MouseEvent in this case)
                 });
+
+                L.control.scale({
+                    metric: true,
+                    imperial: false,
+                    position: 'bottomright'
+                }).addTo(map);
+
+                L.Control.Watermark=L.Control.extend({
+                    onAdd:function(map){
+                        var img = L.DomUtil.create('img');
+                        img.src = '/static/imagens/logo-arbonize.png'
+                        img.style.width = '150px';
+                        img.style.height = '150px';
+                        return img;
+                    },
+                    onRemove:function(map){},
+                });
+
+                L.control.watermark = function(opts){
+                    return new L.Control.Watermark(opts);
+                };
+
+                L.control.watermark({position: 'bottomleft'}).addTo(map);
             </script>
         </div>
         {% for c in range(marcador[0]) %}
