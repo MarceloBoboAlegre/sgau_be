@@ -69,7 +69,11 @@
         </div>
         {% for c in range(marcador[0]) %}
             <script>
-                L.marker([{{marcador[1][c]['latitude']}}, {{marcador[1][c]['longitude']}}]).addTo(map);
+                var lat = {{marcador[1][c]['latitude']}}
+                var lng = {{marcador[1][c]['longitude']}}
+                var id = {{marcador[1][c]['id']}}
+                var marker = L.marker([lat, lng]).addTo(map);
+                marker.bindPopup("<b>ID: " + id + "</b>").openPopup();
             </script>
         {% endfor %}
     </div>
