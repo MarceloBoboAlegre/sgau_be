@@ -427,6 +427,10 @@ table, th, td {
     left: 52%;
 }
 
+#map:hover {
+    cursor: pointer;
+}
+
 @media (min-width: 1300px) and (max-width: 1370px) {
     .menu {
         height: 609px;
