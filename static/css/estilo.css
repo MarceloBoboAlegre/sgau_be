@@ -1,34 +1,65 @@
         /* Sidebar fixa */
         .sidebar {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            left: 0;
             background-color: #3F7924;
+            justify-content: space-evenly; /* Distribui os elementos uniformemente */
             min-height: 100vh; /* Ocupa a altura total da tela */
             flex-basis: 200px; /* Largura fixa */
             flex-shrink: 0; /* Evita encolher em telas pequenas */
         }
+
         .sidebar a {
             color: white;
             text-decoration: none;
             font-weight: bold;
             text-align: center;
-            height: 16.66%;
-            padding: 15px;
+            padding: 15px 20px;
+            display: block;
+            flex-grow: 1; /* Faz os links ocuparem o espaço igualmente */
         }
+
         .sidebar a:hover {
-            background-color: #45a049;
+            background-color: #006400;
         }
+
         img.icon {
             display: inline-block;
-            width: 20%;
-            height: 30%;
-            margin-right: 5px;
+            width: 18%;
+            height: 34%;
+            margin-right: 10px;
             border-radius: 5px;
         }
+
         img.titulo {
             display: inline-block;
             width: 5%;
             height: 5%;
             margin-right: 5px;
             border-radius: 5px;
+        }
+
+        /* Conteúdo principal (deixa espaço para a sidebar fixa) */
+        .content {
+            margin-left: 200px; /* Espaço da largura da sidebar */
+            padding: 20px;
+        }
+
+        .form-control {
+            background-color: #d8f3d8;
+            border: 1px solid #90c790;
+        }
+
+        .btn-success {
+            background-color: #4CAF50;
+            border-color: #45a049;
+        }
+
+        .btn-success:hover {
+            background-color: #45a049;
         }
 
         /* Responsividade */
