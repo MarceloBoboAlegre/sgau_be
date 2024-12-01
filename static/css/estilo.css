@@ -1,0 +1,44 @@
+        /* Sidebar fixa */
+        .sidebar {
+            background-color: #3F7924;
+            min-height: 100vh; /* Ocupa a altura total da tela */
+            flex-basis: 200px; /* Largura fixa */
+            flex-shrink: 0; /* Evita encolher em telas pequenas */
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            height: 16.66%;
+            padding: 15px;
+        }
+        .sidebar a:hover {
+            background-color: #45a049;
+        }
+        img.icon {
+            display: inline-block;
+            width: 20%;
+            height: 30%;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+        img.titulo {
+            display: inline-block;
+            width: 5%;
+            height: 5%;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .sidebar {
+                flex-basis: 150px; /* Sidebar menor em telas pequenas */
+            }
+        }
+
+        /* Estilização do conteúdo */
+        .content {
+            flex-grow: 1; /* Garante que o conteúdo ocupe o espaço restante */
+        }
