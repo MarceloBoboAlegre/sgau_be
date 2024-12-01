@@ -42,6 +42,14 @@
             border-radius: 5px;
         }
 
+        img.pesquisa {
+            display: inline-block;
+            width: 1.5%;
+            height: 1.5%;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+
         /* Conteúdo principal (deixa espaço para a sidebar fixa) */
         .content {
             margin-left: 200px; /* Espaço da largura da sidebar */
@@ -60,6 +68,26 @@
 
         .btn-success:hover {
             background-color: #45a049;
+        }
+
+        #map {
+            width: 100%;
+            height: 93vh;
+        }
+
+        #map:hover {
+            cursor: pointer;
+        }
+
+        #parte1 {
+            display: inline-block;
+            position: relative;
+            margin-right: 5px;
+        }
+
+        #parte2 {
+            display: inline-block;
+            position: relative;
         }
 
         /* Responsividade */
