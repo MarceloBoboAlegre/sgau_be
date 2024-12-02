@@ -178,6 +178,11 @@ def pesquisar_arvore():
     return render_template('pesquisa.html', pesquisa=pesquisa)
 
 
+@app.route('/info')
+def get_info():
+    return render_template('info.html')
+
+
 @app.route('/pesquisa.html')
 def entrar_pesquisa():
     if logado:
