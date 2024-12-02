@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, request, flash
 import uteis as ut
-from time import sleep
+import os
 
 # APP
 app = Flask(__name__)
@@ -189,3 +189,5 @@ def entrar_pesquisa():
 
 if __name__ in "__main__":
     app.run(debug=True)
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host="0.0.0.0", port=port)
