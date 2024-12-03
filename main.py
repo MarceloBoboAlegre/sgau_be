@@ -45,7 +45,14 @@ def entrar_home():
 @app.route('/arvore_cadastro.html')
 def entrar_arvore_cadastro():
     if logado:
-        return render_template('arvore_cadastro.html')
+        # Obtendo os parâmetros de latitude e longitude
+        latitude = request.args.get('latitude', '')
+        longitude = request.args.get('longitude', '')
+
+        print(latitude, longitude)
+
+        # Renderizando o template e passando os valores
+        return render_template('arvore_cadastro.html', latitude=latitude, longitude=longitude)
     else:
         flash('Não está logado!')
         return redirect('/')

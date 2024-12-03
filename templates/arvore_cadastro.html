@@ -41,11 +41,11 @@
                     </div>
                     <div class="col-md-3">
                         <label for="latitude" class="form-label">Latitude</label>
-                        <input type="number" class="form-control" name="latitude" id="latitude" step="any" required>
+                        <input type="number" class="form-control" name="latitude" id="latitude" value="{{ latitude }}" readonly>
                     </div>
                     <div class="col-md-3">
                         <label for="longitude" class="form-label">Longitude</label>
-                        <input type="number" class="form-control" name="longitude" id="longitude" step="any" required>
+                        <input type="number" class="form-control" name="longitude" id="longitude" value="{{ longitude }}" readonly>
                     </div>
                     <div class="col-md-3">
                         <label for="diametro_copa" class="form-label">Diâmetro da Copa</label>
@@ -200,5 +200,18 @@
             </form>
         </div>
     </div>
+    <script>
+        // Script para preencher o formulário com os valores da URL
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const latitude = urlParams.get('latitude');
+            const longitude = urlParams.get('longitude');
+
+            if (latitude && longitude) {
+                document.getElementById('latitude').value = latitude;
+                document.getElementById('longitude').value = longitude;
+            }
+        });
+    </script>
 </body>
 </html>
